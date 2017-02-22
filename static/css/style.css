@@ -1,0 +1,556 @@
+* {
+  box-sizing: border-box;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body{
+   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.mt {
+	margin-top: 25px;
+}
+.pn {
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.pn:hover {
+	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.main {
+   background: rgba(0, 0, 0, 0.33);
+   min-height: 95vh;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+/******************************************/
+/* Header in Home Page
+/******************************************/
+
+header {
+  text-align: center;
+  background: #100a56;
+  color: white;
+  height: 100%;
+  min-height: 100vh;
+}
+header .container {
+  padding-top: 5vh;
+  padding-bottom: 50px;
+}
+header img {
+  display: block;
+  margin: 0 auto 20px;
+  max-height: 30vh !important;
+}
+header .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 4.5em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+header .btn-outline {
+  color: white;
+  font-size: 2em;
+  border: solid 2px white;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  margin-top: 50px;
+  width: 90%;
+  padding: 50px 20px;
+}
+header .btn-outline:hover,
+header .btn-outline:focus,
+header .btn-outline:active,
+header .btn-outline.active {
+  color: #100a56;
+  background: white;
+  border: solid 2px white;
+}
+
+@media (max-width: 1210px) {
+   header .btn-outline {
+     font-size: 2em;
+     margin-top: 50px;
+   }
+}
+@media (max-width: 1010px) {
+   header .btn-outline {
+     font-size: 1.5em;
+     margin-top: 50px;
+   }
+}
+@media (max-width: 768px) {
+   header .btn-outline {
+     font-size: 1.3em;
+     padding: 30px;
+     margin-top: 20px;
+   }
+}
+/******************************************/
+/* Mood Picker
+/******************************************/
+
+.slide-up {
+    top: 0px !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.slide-down {
+    top: 110vh !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.mood-modal {
+   top: 110vh;
+}
+.mood-modal .modal-content {
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  min-height: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: #2b2a2d;
+}
+.mood-modal .modal-content h2 {
+  margin: 0;
+  font-size: 3em;
+  color: #FFF;
+}
+.mood-modal .modal-content img {
+  margin-bottom: 30px;
+}
+.mood-modal .modal-content .item-details {
+  margin: 30px 0;
+}
+.mood-modal .close-modal {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+.mood-modal .close-modal:hover {
+   opacity: 0.8;
+}
+.mood-modal .close-modal .lr {
+  height: 75px;
+  width: 1px;
+  margin-left: 35px;
+  background-color: #FFF;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Safari and Chrome */
+  z-index: 1051;
+}
+.mood-modal .close-modal .lr .rl {
+  height: 75px;
+  width: 1px;
+  background-color: #FFF;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  z-index: 1052;
+}
+.mood-modal .modal-backdrop {
+  opacity: 0;
+  display: none;
+}
+/******************************************/
+/* Playlist Selection Hover Effect
+/******************************************/
+
+.playlist-panel .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+.playlist-panel .hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.playlist-panel .hovereffect h2,
+.playlist-panel .hovereffect img {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.playlist-panel .hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.playlist-panel .hovereffect:hover img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.playlist-panel .hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/******************************************/
+/* Song Selection Hover Effect
+/******************************************/
+
+#playlist .hovereffect {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+#playlist .hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+#playlist .hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+#playlist .hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  width: 100%;
+}
+
+#playlist .hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+#playlist .hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 1em;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+#playlist .hovereffect a, #playlist .hovereffect p {
+  color: #FFF;
+  font-size: 1em;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+#playlist .hovereffect:hover a, #playlist .hovereffect:hover p, #playlist .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+
+/******************************************/
+/* Image Carousel
+/******************************************/
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.item:nth-child(1) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/wallpaper-winter.jpg) no-repeat center center fixed;
+
+}
+.item:nth-child(2) {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/wallpaper-winter-two.jpg) no-repeat center center fixed;
+}
+.carousel {
+    z-index: -99;
+}
+.carousel .item {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+/******************************************/
+/* Video Background
+/******************************************/
+
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+     height: 300%;
+     top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+     width: 300%;
+     left: -100%;
+  }
+}
+
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+
+/******************************************/
+/* Item Arrangement on Player
+/******************************************/
+
+.bottom-left {
+   position: absolute;
+   bottom: 3%;
+   left: 3%;
+   color: #fff;
+   background: rgba(0,0,0,0.3);
+   padding: 1rem;
+   font-family: Avenir, Helvetica, sans-serif;
+}
+.bottom-left:hover {
+  background: #000;
+ }
+.top-middle {
+   position: absolute;
+   top: 3%;
+   width: 98%;
+   text-align: center;
+   color: #fff;
+   font-family: Avenir, Helvetica, sans-serif;
+}
+
+.top-middle #song-title {
+   position: relative;
+   z-index: 10000;
+   width: 50%;
+   margin: auto;
+   color: rgba(255, 255, 255, 0.27);
+   background: rgba(0, 0, 0, 0);
+   padding: 1em;
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+}
+
+.top-middle #song-title:hover {
+   color: rgb(255, 255, 255);
+   background: rgba(0, 0, 0, 0.5);
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+}
+
+.top-left {
+  width: 90%;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  background: none;
+  color: #fff;
+  font-family: Avenir, Helvetica, sans-serif;
+}
+
+.top-left #menu-btn{
+   position: relative;
+   z-index: 10005;
+   background: rgba(0,0,0,0.3);
+   padding: 1rem;
+}
+
+#playlist {
+  max-width: 25%;
+  max-height: 70vh;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+}
+
+#playlist:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.expand {
+  display: block;
+}
+
+.top-right {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+ }
+
+.bottom-right {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+ }
+
+.control-btn{
+  width: 70px;
+  height: 70px;
+  border-radius:50px;
+  font-size:20px;
+  text-align:center;
+  color: #fff;
+  background: #000;
+  border: 2px solid #fff;
+}
+
+.control-btn:hover{
+  color: #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.hamburger .hamburger-inner, .hamburger .hamburger-inner:after, .hamburger .hamburger-inner:before {
+  background-color: #fff;
+}
